@@ -20,7 +20,7 @@ makeCacheMatrix <- function(x = matrix()) {
   ## stores the inverse, and gets the inverse if it exists, respectively
   setInverse <- function(inverse) invMatrix <<- inverse
   getInverse <- function() invMatrix
-  list(set = set, setInverse = setInverse, getInverse = getInverse)
+  list(set = set, get = get, setInverse = setInverse, getInverse = getInverse)
 }
 
 
@@ -40,7 +40,7 @@ cacheSolve <- function(x, ...) {
   ## set the inverted matrix as... well, the inverted matrix, and return that
   mat <- x$get()
   invMatrix <- solve(mat, ...)
-  x$setinverse(invMatrix)
+  x$setInverse(invMatrix)
   invMatrix
   
 }
